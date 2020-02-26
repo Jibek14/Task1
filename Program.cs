@@ -12,7 +12,7 @@ namespace bitcoin
     {
         static void Main(string[] args)
         {
-            string url = "http://api.binance.com/api/v3/order?symbol=LTCBTC&appid=9Voq4OIaeWBhtKJafczUPfTaNlH9n6Ozu1ZwfxYLBmqZVI6xIDrlQuUxw0kt0je6";
+            string url = "http://api.binance.com/api/v3/ticker/price?symbol=LTCBTC";
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             httpWebRequest.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
@@ -21,6 +21,8 @@ namespace bitcoin
             {
                 response = streamReader.ReadToEnd();
             }
+            Console.WriteLine(response);
+            Console.ReadLine();
         }
     }
 }
